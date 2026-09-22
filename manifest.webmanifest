@@ -1,0 +1,16 @@
+{
+  "name": "Meine Stunden · KVF 26",
+  "short_name": "Meine Stunden",
+  "description": "Turnusplan KVF 26 für Lehrkräfte: abhaken und Rückmeldung geben. Alle Einträge bleiben auf dem Gerät.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F6F5",
+  "theme_color": "#F4F6F5",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

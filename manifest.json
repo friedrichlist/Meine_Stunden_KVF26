@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "67d60754-883b-42e7-a8d4-414b29e68084",
+  "packageName": "de.friedrichlist.meinestundenkvf26",
+  "developer": {
+    "name": "BbS IV Friedrich List Halle (Saale)",
+    "websiteUrl": "https://listschule-halle.de/",
+    "privacyUrl": "https://listschule-halle.de/datenschutzerklaerung/",
+    "termsOfUseUrl": "https://listschule-halle.de/impressum/"
+  },
+  "name": {
+    "short": "Meine Stunden",
+    "full": "Meine Stunden · KVF 26"
+  },
+  "description": {
+    "short": "Turnusplan KVF 26 abhaken und Rückmeldung geben",
+    "full": "Für die Lehrkräfte der KVF 26: die eigenen Stunden des Turnusplans abhaken und in wenigen Klicks zurückmelden, ob Zeit und Material getragen haben. Die Rückmeldungen fließen in die Überarbeitung der Materialien ein. Alle Einträge werden ausschließlich lokal im Browser des Geräts gespeichert und über eine Ausgabedatei selbst weitergegeben. Es gibt kein Backend, keine Anmeldung und keine Datenübertragung an Dritte."
+  },
+  "icons": {
+    "color": "icon-color.png",
+    "outline": "icon-outline.png"
+  },
+  "accentColor": "#1F6670",
+  "staticTabs": [
+    {
+      "entityId": "meineStundenKvf26",
+      "name": "Meine Stunden",
+      "contentUrl": "https://friedrichlist.github.io/Meine_Stunden_KVF26/",
+      "websiteUrl": "https://friedrichlist.github.io/Meine_Stunden_KVF26/",
+      "scopes": [ "personal" ]
+    }
+  ],
+  "validDomains": [ "friedrichlist.github.io" ]
+}
