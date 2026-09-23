@@ -179,6 +179,16 @@ button.knopf[disabled]:hover{border-color:var(--line2);background:var(--surface)
 /* Der Bogen — halb hohes Blatt ueber der Seite */
 .hg{position:fixed;inset:0;background:rgba(10,16,18,.5);z-index:40;
   display:flex;align-items:flex-end;justify-content:center;overflow-y:auto}
+/* Diese Zeile ist nicht schmueckend, sondern traegt die ganze Bedienung:
+   das Attribut `hidden` bekommt sein display:none vom Browser, und jede
+   eigene display-Angabe schlaegt das. Ohne sie liegt der Hintergrund des
+   Bogens dauerhaft ueber der Seite - halbdurchsichtig, also kaum zu sehen -
+   und faengt jeden Klick ab: Auswahlfeld, Knoepfe, Karten, alles tot.
+   Aufgefallen am 23.09.2026 in der Teams-Registerkarte. Nicht aufgefallen
+   war es vorher, weil jede Pruefung element.click() aus JavaScript gerufen
+   hat, und das umgeht die Trefferpruefung.
+   VORFASSUNG: lehrkraft.tpl.html.vor_klicksperre_23092026 */
+.hg[hidden]{display:none}
 @media (min-width:640px){.hg{align-items:center;padding:20px}}
 .bogen{background:var(--surface);color:var(--ink);border:2px solid var(--ink);
   width:min(560px,100%);max-height:92vh;overflow-y:auto;padding:18px 20px 22px;
