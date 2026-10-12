@@ -11,6 +11,15 @@ Alle Einträge bleiben im Browser des jeweiligen Geräts. Es gibt kein Backend, 
 Anmeldung, keine Datenübertragung. Weitergegeben wird nur, was die Lehrkraft selbst als
 Datei ausgibt.
 
+## Gestaltung (seit 10.10.2026)
+
+Die App trägt das Corporate Design der Listschule Halle (Saale): Farben aus dem Design Manual,
+Schrift Montserrat (in die Seite eingebettet, SIL Open Font License 1.1 – es wird nichts von
+Google oder anderen nachgeladen), Logo oben, Icon als App-Symbol. Ausnahme: die sieben
+Fachfarben bleiben zur Orientierung wie im gedruckten Turnusplan (Entscheidung Christian
+vom 10.10.2026). Das CD kommt aus `cd/cd.py` in der Tafeln-Bauumgebung
+(`Turnusplan BGT/1. AJ`); `tafeln.js` setzt es in die Tafel und prüft es.
+
 ---
 
 ## Was liegt hier
@@ -21,8 +30,10 @@ Datei ausgibt.
 | `lk-app-bauen.py` | Baut aus der Lehrkrafttafel diese installierbare Fassung. |
 | `manifest.webmanifest` | Macht die Seite installierbar (Name, Icon, Startbildschirm). |
 | `service-worker.js` | Offline-Cache. Lädt die App beim zweiten Besuch auch ohne Netz. |
-| `datenschutz.html` | Datenschutzhinweis, wird vom Teams-Manifest und aus dem Fußbereich verlinkt. |
-| `icon-192.png`, `icon-512.png` | App-Icons: ein Haken, damit die App auf dem Startbildschirm nicht mit der Schüler-App verwechselt wird. |
+| `datenschutz.html` | Datenschutzhinweis, wird vom Teams-Manifest und aus dem Fußbereich verlinkt. Erzeugt von `lk-app-bauen.py` aus `datenschutz.tpl.html`. |
+| `datenschutz.tpl.html` | Text des Datenschutzhinweises mit Marken für das CD. Hier wird der Text gepflegt. |
+| `icon-192.png`, `icon-512.png` | App-Icons: Icon der Listschule, Dunkelgrün auf Grün – damit die App auf dem Startbildschirm nicht mit der Schüler-App (weiß auf Dunkelgrün) verwechselt wird (seit 10.10.2026; vorher ein Haken). |
+| `icon-color.png`, `icon-outline.png` | Icons für Teams (192 px farbig, 32 px weiße Linien auf transparent). |
 | `teams/manifest.json` | Teams-App-Definition. |
 
 ## Vor der ersten Veröffentlichung zu klären
@@ -104,6 +115,11 @@ Die Tafel wird im Bauablauf des Turnusplans gesetzt (`tafeln.js` aus
 ```bash
 python3 lk-app-bauen.py "/Pfad/zu/Meine_Stunden_KVF26.html"
 ```
+
+Das Skript schreibt `index.html` und (seit 10.10.2026) `datenschutz.html` aus `datenschutz.tpl.html` neben sich;
+Schrift, Farbwerte, Logo und Favicon nimmt es aus der Tafel. App-Icons neu erzeugen (nur wenn sich das CD
+ändert): `python3 "<Tafeln-Bauumgebung>/cd/cd.py" --app-icons . --zweite` (der Ordner `cd/` liegt in `Tafeln_Bauumgebung_V204-KVF26e_CD_10102026.zip`) – danach das Teams-Paket neu packen und in
+`teams/manifest.json` die `version` erhöhen.
 
 Findet das Skript einen Ansatzpunkt nicht oder mehrfach, bricht es ab und sagt welchen —
 dann hat sich die Vorlage an dieser Stelle geändert und das Skript muss nachgezogen werden.

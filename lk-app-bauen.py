@@ -19,8 +19,8 @@ import pathlib
 
 KOPF = '''<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Turnusplan KVF 26 für Lehrkräfte – abhaken und Rückmeldung geben. Alle Einträge bleiben auf dem Gerät.">
-<meta name="theme-color" content="#F4F6F5" media="(prefers-color-scheme:light)">
-<meta name="theme-color" content="#12181A" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#E9F1ED" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#132224" media="(prefers-color-scheme:dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Meine Stunden">
@@ -70,6 +70,28 @@ STIL_ZUSATZ = ('\n.ds-link{color:var(--muted);text-decoration:underline;'
                'text-underline-offset:2px}\n.ds-link:hover{color:var(--ink2)}')
 
 
+def datenschutz_bauen(s, verzeichnis):
+    """Seit 10.10.2026 (CD der Listschule): datenschutz.html entsteht aus datenschutz.tpl.html.
+    Schrift, Farbwerte, Logo und Favicon nimmt das Skript aus der Tafel, die tafeln.js mit cd/cd.py
+    gebaut hat - so gibt es nur eine Quelle fuer das Corporate Design."""
+    tpl_pfad = verzeichnis / 'datenschutz.tpl.html'
+    if not tpl_pfad.is_file():
+        sys.exit("ABBRUCH: datenschutz.tpl.html fehlt neben dem Skript.")
+    stil = re.search(r'/\* Corporate Design der Listschule Halle \(Saale\), Design Manual.*?\.cd-icon path\{[^}]*\}', s, re.S)
+    logo = re.search(r'<svg class="cd-logo".*?</svg>', s, re.S)
+    fav = re.search(r'<link rel="icon" type="image/svg\+xml" href="data:[^"]*">', s)
+    if not (stil and logo and fav):
+        sys.exit("ABBRUCH: CD-Bausteine (Stil, Logo, Favicon) nicht in der Tafel - erst tafeln.js mit cd/ fahren.")
+    t = tpl_pfad.read_text(encoding='utf-8')
+    for marke, inhalt in (('/*__CDSTIL__*/', stil.group(0)), ('<!--__CDFAVICON__-->', fav.group(0)), ('__CDLOGO__', logo.group(0))):
+        t = ersetze_einmal(t, marke, inhalt, 'Marke ' + marke + ' in datenschutz.tpl.html')
+    if 'googleapis' in t or 'fonts.gstatic' in t:
+        sys.exit("ABBRUCH: datenschutz.html wuerde Schriften von Google laden.")
+    ziel = verzeichnis / 'datenschutz.html'
+    ziel.write_text(t, encoding='utf-8')
+    print(f"  {tpl_pfad.name} -> {ziel.name}  ({len(t):,} Bytes)")
+
+
 def ersetze_einmal(text, alt, neu, was):
     n = text.count(alt)
     if n != 1:
@@ -86,6 +108,7 @@ def main():
 
     s = quelle.read_text(encoding="utf-8")
     ausgangsgroesse = len(s)
+    datenschutz_bauen(s, pathlib.Path(__file__).parent)
 
     # Gegenprobe: das ist die Lehrkrafttafel und nicht versehentlich die
     # Schuelertafel - die beiden liegen im selben Ordner nebeneinander.

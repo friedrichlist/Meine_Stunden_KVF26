@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datenschutz · Meine Stunden KVF 26</title>
+<!--__CDFAVICON__-->
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<style>
+/*__CDSTIL__*/
+/* Corporate Design der Listschule Halle (Saale) – Werte aus der Tafel übernommen (app-bauen.py) */
+:root{
+  --ground:var(--cd-grund); --surface:var(--cd-flaeche);
+  --ink:var(--cd-text); --ink2:var(--cd-text2); --muted:var(--cd-leise);
+  --line2:var(--cd-rand); --focus:var(--cd-link);
+  --sans:var(--cd-schrift); --serif:var(--cd-schrift); --mono:var(--cd-schrift);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:30px 18px 70px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+h1{font-family:var(--serif);font-size:26px;font-weight:700;margin:0 0 20px;letter-spacing:-.012em}
+h2{font-size:16px;font-weight:600;margin:30px 0 8px}
+p{margin:0 0 12px;color:var(--ink2)}
+b{color:var(--ink)}
+ul{margin:0 0 12px;padding-left:20px;color:var(--ink2)}
+li{margin-bottom:6px}
+.kasten{border:2px solid var(--ink);background:var(--surface);padding:15px 17px;margin:22px 0}
+.kasten p:last-child{margin-bottom:0}
+a{color:var(--focus);font-weight:600}
+.marke{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;
+  padding:0 0 12px;margin:0 0 22px;border-bottom:3px solid var(--cd-akzent)}
+.marke .cd-logo{width:clamp(160px,38vw,215px)}
+.marke-text{font-size:12.5px;font-weight:600;color:var(--muted);text-align:right;line-height:1.35}
+@media (max-width:480px){.marke-text{display:none}}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line2);
+  font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="marke">__CDLOGO__<span class="marke-text">BbS IV „Friedrich List“ Halle (Saale)<br>Kaufleute für Versicherungen und Finanzanlagen</span></div>
+<p class="eyebrow">Meine Stunden · KVF 26</p>
+<h1>Datenschutz</h1>
+
+<div class="kasten">
+  <p><b>Kurz gesagt:</b> Diese App sammelt keine Daten. Alles, was Sie eintragen, bleibt im Speicher Ihres eigenen Geräts. Es gibt keinen Server, der etwas davon erfährt. Weitergegeben wird nur, was Sie selbst als Datei ausgeben.</p>
+</div>
+
+<h2>Welche Daten werden verarbeitet?</h2>
+<p>Ausschließlich Ihre eigenen Einträge: welche Bausteine, Leistungen und Selbstlernstrecken Sie abgehakt haben, die Angaben zu Zeit, Material, Aufgabenstellung und Punkten, Ihre Vermerke und Wochenrückblicke sowie der Vorname, den Sie oben gewählt haben. Diese liegen im <b>localStorage</b> Ihres Browsers, einem Speicherbereich, auf den nur diese eine Seite auf diesem einen Gerät zugreifen kann.</p>
+<p>Einträge über einzelne Schülerinnen und Schüler sieht die App nicht vor. Sie ist ein Werkzeug zur Bewertung des <b>Materials</b>, nicht von Personen — tragen Sie in die Vermerkfelder bitte keine Namen von Lernenden ein.</p>
+
+<h2>Werden Daten übertragen?</h2>
+<p>Nein. Die App hat kein Backend, keine Datenbank und keine Anmeldung. Ihre Einträge werden zu keinem Zeitpunkt hochgeladen — weder an die Schule noch an Dritte.</p>
+<p>Die Seite lädt keine Schriften oder Skripte von anderen Anbietern nach; die Schrift Montserrat ist eingebettet. Nur in Microsoft Teams kommt das Teams-Skript von <b>res.cdn.office.net</b> dazu, damit die Darstellung zum Teams-Design passt. Dabei wird – wie bei jedem Aufruf einer Website – die IP-Adresse Ihres Geräts an Microsoft übermittelt.</p>
+<p>Nach dem ersten Aufruf liegt die App im Zwischenspeicher Ihres Browsers; ab dann funktioniert sie auch ohne Internet.</p>
+
+<h2>Wer kann meine Einträge sehen?</h2>
+<p>Zunächst nur Sie, auf dem Gerät, auf dem Sie sie gemacht haben. Die Kolleginnen und Kollegen, die Schulleitung und die IT haben keinen Zugriff — technisch nicht, weil die Daten das Gerät nie verlassen.</p>
+<p>Das ändert sich in dem Augenblick, in dem Sie auf <b>„Rückmeldung ausgeben“</b> drücken und die Datei weitergeben. Dann sieht, wer sie bekommt, alles darin: Haken, Einschätzungen und Vermerke samt Ihrem Vornamen. Das ist gewollt — die Rückmeldungen sollen in die Überarbeitung der Materialien einfließen. Sie entscheiden, wann und ob.</p>
+
+<h2>Was passiert bei Löschung?</h2>
+<p>Wenn Sie den Browser-Speicher leeren, den privaten Modus nutzen, die App vom Startbildschirm entfernen oder das Gerät zurücksetzen, sind die Einträge <b>unwiderruflich weg</b>.</p>
+<div class="kasten">
+  <p><b>Deshalb wichtig:</b> Geben Sie Ihre Rückmeldung am Ende jeder Blockwoche aus. Der Knopf legt eine Datei <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px">KVF_Rueckmeldung_&lt;Vorname&gt;_&lt;Datum&gt;.json</span> in Ihren Downloads ab. Sie ist zugleich die Sicherung, mit der Sie Ihre Einträge wiederherstellen oder auf ein anderes Gerät übertragen können.</p>
+</div>
+
+<h2>Mehrere Zugänge, getrennte Daten</h2>
+<p>Die App über das Symbol auf dem Startbildschirm und die App im Teams-Tab nutzen <b>getrennte Speicher</b>. Einträge erscheinen nicht automatisch auf der jeweils anderen Seite. Entscheiden Sie sich für einen Weg — oder nutzen Sie die Ausgabedatei zum Übertragen.</p>
+
+<h2>Verantwortlich</h2>
+<p>Diese Seite wird als statische Datei über GitHub Pages ausgeliefert. Betreiber der App ist die Schule (BbS IV „Friedrich List“ Halle (Saale), Charlottenstraße 15, 06108 Halle (Saale)); Ansprechpartner ist die betreuende Lehrkraft der KVF 26.</p>
+
+<footer>
+  <a href="./">← Zurück zur App</a>
+</footer>
+</div>
+</body>
+</html>

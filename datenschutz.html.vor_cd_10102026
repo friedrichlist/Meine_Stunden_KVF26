@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datenschutz · Meine Stunden KVF 26</title>
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<style>
+:root{
+  --ground:#F4F6F5; --surface:#FFFFFF;
+  --ink:#182124; --ink2:#48585B; --muted:#6E7E81;
+  --line2:#C2CDCC; --focus:#1F6670;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#12181A; --surface:#1A2124;
+  --ink:#E3EAEA; --ink2:#AFBCBD; --muted:#8B9A9C;
+  --line2:#3C4A4D; --focus:#4FA9B4;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:30px 18px 70px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+h1{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 20px;letter-spacing:-.012em}
+h2{font-size:16px;font-weight:600;margin:30px 0 8px}
+p{margin:0 0 12px;color:var(--ink2)}
+b{color:var(--ink)}
+ul{margin:0 0 12px;padding-left:20px;color:var(--ink2)}
+li{margin-bottom:6px}
+.kasten{border:2px solid var(--ink);background:var(--surface);padding:15px 17px;margin:22px 0}
+.kasten p:last-child{margin-bottom:0}
+a{color:var(--focus)}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line2);
+  font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="eyebrow">Meine Stunden · KVF 26</p>
+<h1>Datenschutz</h1>
+
+<div class="kasten">
+  <p><b>Kurz gesagt:</b> Diese App sammelt keine Daten. Alles, was Sie eintragen, bleibt im Speicher Ihres eigenen Geräts. Es gibt keinen Server, der etwas davon erfährt. Weitergegeben wird nur, was Sie selbst als Datei ausgeben.</p>
+</div>
+
+<h2>Welche Daten werden verarbeitet?</h2>
+<p>Ausschließlich Ihre eigenen Einträge: welche Bausteine, Leistungen und Selbstlernstrecken Sie abgehakt haben, die Angaben zu Zeit, Material, Aufgabenstellung und Punkten, Ihre Vermerke und Wochenrückblicke sowie der Vorname, den Sie oben gewählt haben. Diese liegen im <b>localStorage</b> Ihres Browsers, einem Speicherbereich, auf den nur diese eine Seite auf diesem einen Gerät zugreifen kann.</p>
+<p>Einträge über einzelne Schülerinnen und Schüler sieht die App nicht vor. Sie ist ein Werkzeug zur Bewertung des <b>Materials</b>, nicht von Personen — tragen Sie in die Vermerkfelder bitte keine Namen von Lernenden ein.</p>
+
+<h2>Werden Daten übertragen?</h2>
+<p>Nein. Die App hat kein Backend, keine Datenbank und keine Anmeldung. Ihre Einträge werden zu keinem Zeitpunkt hochgeladen — weder an die Schule noch an Dritte.</p>
+<p>Beim ersten Aufruf lädt die Seite zwei Dinge aus dem Netz:</p>
+<ul>
+  <li>die Schriftarten von <b>fonts.googleapis.com</b> (Google Fonts)</li>
+  <li>in Microsoft Teams zusätzlich das Teams-Skript von <b>res.cdn.office.net</b>, damit die Darstellung zum Teams-Design passt</li>
+</ul>
+<p>Dabei wird — wie bei jedem Aufruf einer Website — die IP-Adresse Ihres Geräts an den jeweiligen Anbieter übermittelt. Danach werden beide Dateien lokal zwischengespeichert; ab dann funktioniert die App auch ohne Internet.</p>
+
+<h2>Wer kann meine Einträge sehen?</h2>
+<p>Zunächst nur Sie, auf dem Gerät, auf dem Sie sie gemacht haben. Die Kolleginnen und Kollegen, die Schulleitung und die IT haben keinen Zugriff — technisch nicht, weil die Daten das Gerät nie verlassen.</p>
+<p>Das ändert sich in dem Augenblick, in dem Sie auf <b>„Rückmeldung ausgeben“</b> drücken und die Datei weitergeben. Dann sieht, wer sie bekommt, alles darin: Haken, Einschätzungen und Vermerke samt Ihrem Vornamen. Das ist gewollt — die Rückmeldungen sollen in die Überarbeitung der Materialien einfließen. Sie entscheiden, wann und ob.</p>
+
+<h2>Was passiert bei Löschung?</h2>
+<p>Wenn Sie den Browser-Speicher leeren, den privaten Modus nutzen, die App vom Startbildschirm entfernen oder das Gerät zurücksetzen, sind die Einträge <b>unwiderruflich weg</b>.</p>
+<div class="kasten">
+  <p><b>Deshalb wichtig:</b> Geben Sie Ihre Rückmeldung am Ende jeder Blockwoche aus. Der Knopf legt eine Datei <span style="font-family:var(--mono);font-size:13px">KVF_Rueckmeldung_&lt;Vorname&gt;_&lt;Datum&gt;.json</span> in Ihren Downloads ab. Sie ist zugleich die Sicherung, mit der Sie Ihre Einträge wiederherstellen oder auf ein anderes Gerät übertragen können.</p>
+</div>
+
+<h2>Mehrere Zugänge, getrennte Daten</h2>
+<p>Die App über das Symbol auf dem Startbildschirm und die App im Teams-Tab nutzen <b>getrennte Speicher</b>. Einträge erscheinen nicht automatisch auf der jeweils anderen Seite. Entscheiden Sie sich für einen Weg — oder nutzen Sie die Ausgabedatei zum Übertragen.</p>
+
+<h2>Verantwortlich</h2>
+<p>Diese Seite wird als statische Datei über GitHub Pages ausgeliefert. Betreiber der App ist die Schule; Ansprechpartner ist die betreuende Lehrkraft der KVF 26.</p>
+
+<footer>
+  <a href="./">← Zurück zur App</a>
+</footer>
+</div>
+</body>
+</html>
